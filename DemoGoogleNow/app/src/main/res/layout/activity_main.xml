@@ -11,7 +11,7 @@
         android:id="@+id/ed_text"
         android:hint="Enter text here" />
 
-    <com.github.zagum.speechrecognitionview.RecognitionProgressView
+    <qee.zee.com.demogooglenow.RecognitionProgressView
         android:id="@+id/recognition_view"
         android:layout_width="wrap_content"
         android:layout_height="42dp"

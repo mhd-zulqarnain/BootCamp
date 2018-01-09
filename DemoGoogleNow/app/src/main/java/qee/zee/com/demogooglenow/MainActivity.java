@@ -29,10 +29,11 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.github.zagum.speechrecognitionview.RecognitionProgressView;
-import com.github.zagum.speechrecognitionview.adapters.RecognitionListenerAdapter;
+
 
 import java.util.ArrayList;
+
+import qee.zee.com.demogooglenow.adapters.RecognitionListenerAdapter;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -69,10 +70,7 @@ public class MainActivity extends AppCompatActivity {
         });
         recognitionProgressView.setColors(colors);
         recognitionProgressView.setBarMaxHeightsInDp(heights);
-        recognitionProgressView.setCircleRadiusInDp(2);
         recognitionProgressView.setSpacingInDp(8);
-        recognitionProgressView.setIdleStateAmplitudeInDp(2);
-        recognitionProgressView.setRotationRadiusInDp(10);
         recognitionProgressView.play();
 
         mike = (ImageButton) findViewById(R.id.mike);
