@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.3.1_a1bb03cf7ecbd75de2daa8749f4cc123de64ca4d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.3.1_c69aa53d1232fb005d4fe8e7587a2ef037f97e88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_749f92721abc8a389255a48e6bc4f467c7c672e5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e85b7009c3a68229e76ea74f727a5a225eb4a12e">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_66e3fb8482c4f62df7dea30d673ea439ea5233c3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.3.1_40a190c2ed54bf0bc663bc9f216031169ab374d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Zul Qarnain\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\gson-2.8.0_24fad92e6ad6ac1b8f09238aa1bb8e753cc28dd0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="aa311b802d706a4bef6056eaf7ac7189f1f8e710">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\instant-run_5cbb0239d80f8114774262cfdd74a0a16a389df8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.3.1_55014693fcb1b038e423e9f54e678a0cf4071048.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.3.1_c7b8bab0c1c2e0d377aa55c8ddbbd6f001e45542.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.3.1_867d85065420b48282d3a098a346139aa17a9cec.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.3.1_3014e280e591a8804571557db101df150b1eef8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.3.1_b9a47a1d136e05a1561cd484fe36bc580e3f6522.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.3.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="D:\Work\java\android\Suuet\JsonFirstApp\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.3.1_32a1bf0fbe6000b5948402e0d1c5efba34cce8d4.jar" />
+    </item>
+
+</items>
