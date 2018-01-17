@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DrawerDemo</string>
+
+    <string-array name="planets">
+        <item>mercury</item>
+        <item>venus</item>
+        <item>earth</item>
+    </string-array>
+</resources>
