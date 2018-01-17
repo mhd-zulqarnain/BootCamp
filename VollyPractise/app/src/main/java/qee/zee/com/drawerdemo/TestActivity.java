@@ -102,6 +102,9 @@ public class TestActivity extends AppCompatActivity {
 
     }
 
+/*
+* Post request using okHttp
+* */
     public void getOkHttp(View view) throws IOException {
         PostTask task = new PostTask();
         task.execute();
