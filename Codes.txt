@@ -1,0 +1,6 @@
+npm install --save express
+npm install --save express-handlebars
+
+to avoid refresh server: 
+npm install -g nodemon
+nodemon
