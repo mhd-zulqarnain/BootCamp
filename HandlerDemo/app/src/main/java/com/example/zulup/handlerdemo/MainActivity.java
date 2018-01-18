@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    Handler handler;
     Thread thread;
+
     @SuppressLint("HandlerLeak")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,23 +20,31 @@ public class MainActivity extends AppCompatActivity {
         final TextView textView = findViewById(R.id.text);
         thread = new Thread(new MyHandler());
         thread.start();
-        handler = new Handler(){
-            @Override
-            public void handleMessage(Message msg) {
-                textView.setText(msg.arg1);
-            }
-        };
-    }
 
-    public class MyHandler implements Runnable {
+    }
+    private Handler handler = new Handler() {
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Toast.makeText(getBaseContext(), msg.arg1 + "test", Toast.LENGTH_SHORT).show();
+
+        }
+    };
+
+    class MyHandler implements Runnable {
 
         @Override
         public void run() {
-            for(int i =0 ;i<100;i++){
-                Message mssg = Message.obtain();
-                mssg.arg1 = i;
-                boolean b = handler.sendMessage(mssg);
-
+            for (int i = 0; i < 100; i++) {
+                Message message = Message.obtain();
+                if (message != null) {
+                    message.arg1 = i;
+                    handler.sendMessage(message);
+                }
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
