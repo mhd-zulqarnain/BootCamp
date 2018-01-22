@@ -7,16 +7,26 @@
     tools:context="com.example.zulup.authenticationdemo.MainActivity"
     android:orientation="vertical">
 
-    <com.twitter.sdk.android.core.identity.TwitterLoginButton
-        android:id="@+id/login_twitter_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-    <com.facebook.login.widget.LoginButton
+
+    <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
+        android:text="Login "
         android:layout_marginBottom="30dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result_facebook"/>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        >
+
+    </FrameLayout>
+
 </LinearLayout>

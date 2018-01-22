@@ -6,84 +6,84 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import android.content.pm.Signature;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.DefaultLogger;
-import com.twitter.sdk.android.core.Result;
+
 import com.twitter.sdk.android.core.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterAuthToken;
-import com.twitter.sdk.android.core.TwitterConfig;
-import com.twitter.sdk.android.core.TwitterCore;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
-    TwitterLoginButton btn;
-    CallbackManager callbackManager;
 
-    LoginButton loginButton;
+    CallbackManager callbackManager;
+    Button CustomLoginButton;
+    TextView textView;
+    final private  int RC_GOOGLE = 90;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FacebookSdk.sdkInitialize(this);
         Twitter.initialize(this);
-
-        btn = findViewById(R.id.login_twitter_button);
-        loginButton = findViewById(R.id.login_button);
-        printhashkey();
-        loginWithtwt();
+        textView = findViewById(R.id.result_facebook);
+        callbackManager = CallbackManager.Factory.create();
+        CustomLoginButton = findViewById(R.id.login_button);
         loginWithFb();
     }
 
-    private void loginWithtwt() {
 
 
-        btn.setCallback(new Callback<TwitterSession>() {
-            @Override
-            public void success(Result<TwitterSession> result) {
-                /*
-                  This provides TwitterSession as a result
-                  This will execute when the authentication is successful
-                 */
-                TwitterSession session = TwitterCore.getInstance().getSessionManager().getActiveSession();
-                TwitterAuthToken authToken = session.getAuthToken();
-                String token = authToken.token;
-                String secret = authToken.secret;
-                Toast.makeText(getApplicationContext(), " "+session.getUserName(), Toast.LENGTH_LONG).show();
-
-                //Calling login method and passing twitter session
-            }
-
-            @Override
-            public void failure(TwitterException exception) {
-                //Displaying Toast message
-                Toast.makeText(getApplicationContext(), "Authentication failed!", Toast.LENGTH_LONG).show();
-            }
-        });
-    }
     private void loginWithFb() {
 
-         callbackManager = CallbackManager.Factory.create();
+        printhashkey();
+        LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+
+                graphRequest(loginResult.getAccessToken());
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
+            }
+        });
+        CustomLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                LoginManager.getInstance().logInWithReadPermissions(MainActivity.this, Arrays.asList("public_profile", "email", "user_friends"));
+
+            }
+        });
+       /* callbackManager = CallbackManager.Factory.create();
 
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -101,16 +101,48 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
 
             }
-        });
+        });*/
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
-        btn.onActivityResult(requestCode, resultCode, data);
     }
 
+    public void graphRequest(AccessToken token) {
+        final Bundle args = new Bundle();
+        GraphRequest request = GraphRequest.newMeRequest(token, new GraphRequest.GraphJSONObjectCallback() {
+
+            @Override
+            public void onCompleted(JSONObject object, GraphResponse response) {
+
+                try {
+//                    textView.setText(object.toString());
+                    args.putString("first_name", object.getString("first_name"));
+                    args.putString("last_name", object.getString("last_name"));
+
+                    HomeFragment homeFragment = new HomeFragment();
+                    homeFragment.setArguments(args);
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.fragment_container, homeFragment);
+                    transaction.commit();
+
+                } catch (Exception e) {
+                    Toast.makeText(getApplicationContext(), "Exception", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+        Bundle b = new Bundle();
+        b.putString("fields", "id,email,first_name,last_name,picture.type(large)");
+        request.setParameters(b);
+        request.executeAsync();
+
+    }
 
     public void printhashkey() {
 
