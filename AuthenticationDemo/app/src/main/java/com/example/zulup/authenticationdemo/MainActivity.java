@@ -27,6 +27,13 @@ import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
+import com.google.android.gms.auth.api.Auth;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.tasks.Task;
 import com.twitter.sdk.android.core.Twitter;
 
 import org.json.JSONException;
@@ -41,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
     CallbackManager callbackManager;
     Button CustomLoginButton;
     TextView textView;
-    final private  int RC_GOOGLE = 90;
+    final private int RC_GOOGLE = 90;
+    private GoogleSignInClient mGoogleSignInClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         CustomLoginButton = findViewById(R.id.login_button);
         loginWithFb();
     }
-
 
 
     private void loginWithFb() {
@@ -104,11 +111,37 @@ public class MainActivity extends AppCompatActivity {
         });*/
     }
 
+    public void loginWithGoogle(View v) {
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
+        startActivityForResult(signInIntent, RC_GOOGLE);
+    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_GOOGLE) {
+            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            handleSignInResult(task);
+        }
+
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void handleSignInResult(Task<GoogleSignInAccount> task) {
+        try {
+            GoogleSignInAccount account = task.getResult(ApiException.class);
+
+           Toast.makeText(getApplicationContext(),account.getEmail()+""+account.getDisplayName(),Toast.LENGTH_SHORT).show();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.d("", "handleSignInResult:Exception "+e);
+        }
     }
 
     public void graphRequest(AccessToken token) {
