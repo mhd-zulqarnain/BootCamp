@@ -3,8 +3,8 @@
     <string name="facebook_app_id">1513666522015364</string>
     <string name="fb_login_protocol_scheme">fb1513666522015364</string>
     <string name="server_client_id">622906424770-0f4f9bdu9bb39k0qdhom3bmk0r1kl7jq.apps.googleusercontent.com</string>
-    <string name="com.twitter.sdk.android.CONSUMER_KEY">Wi5dqnFtlbykhUbHYmyaJzyUM</string>
-    <string name="com.twitter.sdk.android.CONSUMER_SECRET">9mxOThtOCUNs9N6sqIkKf57e7kFpI34xHlAKxeefKFt9DWqC3w</string>
 
+  <string name="com.twitter.sdk.android.CONSUMER_KEY">Wi5dqnFtlbykhUbHYmyaJzyUM</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">9mxOThtOCUNs9N6sqIkKf57e7kFpI34xHlAKxeefKFt9DWqC3w</string>
 
 </resources>
