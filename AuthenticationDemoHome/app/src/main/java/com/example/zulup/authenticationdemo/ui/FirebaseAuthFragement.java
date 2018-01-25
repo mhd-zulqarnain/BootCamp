@@ -38,6 +38,17 @@ import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.DefaultLogger;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterApiClient;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterConfig;
+import com.twitter.sdk.android.core.TwitterCore;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
+import com.twitter.sdk.android.core.identity.TwitterAuthClient;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -49,7 +60,9 @@ public class FirebaseAuthFragement extends Fragment {
     private int RC_GOOGLE = 90;
     private Button btnGoogle;
     private Button customFacebookLoginButton;
+    private Button customTwtLoginButton;
     CallbackManager callbackManager;
+    TwitterAuthClient mTwitterAuthClient;
 
 
     @Nullable
@@ -57,10 +70,12 @@ public class FirebaseAuthFragement extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.activity_firebase, container, false);
         btnGoogle = v.findViewById(R.id.google_button);
-
+        mTwitterAuthClient = new TwitterAuthClient();
         customFacebookLoginButton = v.findViewById(R.id.face_button);
+//        customTwtLoginButton = v.findViewById(R.id.twt_button);
         loginWithGoogle();
         loginWithFb();
+//        loginWithtwt();
         return v;
     }
 
@@ -86,11 +101,40 @@ public class FirebaseAuthFragement extends Fragment {
         });
 
     }
+/*
+    private void loginWithtwt() {
+        TwitterConfig config = new TwitterConfig.Builder(getContext())
+                .logger(new DefaultLogger(Log.DEBUG))
+                .twitterAuthConfig(new TwitterAuthConfig("Wi5dqnFtlbykhUbHYmyaJzyUM",
+                        "9mxOThtOCUNs9N6sqIkKf57e7kFpI34xHlAKxeefKFt9DWqC3w"))
+                .debug(true)
+                .build();
+        Twitter.initialize(config);
+        customTwtLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mTwitterAuthClient.authorize(getActivity(), new Callback<TwitterSession>() {
+                    @Override
+                    public void success(Result<TwitterSession> result) {
+                        Messege.messege(getContext(),"success: "+TwitterCore.getInstance().getApiClient().getAccountService());
+                    }
+
+                    @Override
+                    public void failure(TwitterException exception) {
+                        Messege.messege(getContext(),"Execption:"+exception);
+
+                    }
+                });
+            }
+        });
+
+    }*/
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+        mTwitterAuthClient.onActivityResult(requestCode, resultCode, data);
         if (requestCode == RC_GOOGLE) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
@@ -163,7 +207,7 @@ public class FirebaseAuthFragement extends Fragment {
 
             @Override
             public void onError(FacebookException error) {
-                Messege.messege(getActivity(),"FacebookException"+error);
+                Messege.messege(getActivity(), "FacebookException" + error);
 
             }
         });
@@ -196,7 +240,7 @@ public class FirebaseAuthFragement extends Fragment {
                                 transaction.commit();
                             }
                         } else {
-                            Messege.messege(getActivity(),"Execption"+task.getException());
+                            Messege.messege(getActivity(), "Execption" + task.getException());
                         }
 
                         // ...

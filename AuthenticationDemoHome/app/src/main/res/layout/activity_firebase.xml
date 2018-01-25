@@ -8,20 +8,27 @@
     tools:context="com.example.zulup.authenticationdemo.ui.FirebaseAuthFragement">
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/google_button"
-        android:text="google login"/>
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="google login" />
+
+    <Button
         android:id="@+id/face_button"
-        android:text="Facebook login"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Facebook login" />
+
+   <!-- <Button
+        android:id="@+id/twt_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter login" />-->
 
     <FrameLayout
+        android:id="@+id/firebase_fragement_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/firebase_fragement_container"
 
         >
 

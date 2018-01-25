@@ -82,11 +82,11 @@ public class CustomSocialFragement extends Fragment {
         textView = view.findViewById(R.id.result_facebook);
         callbackManager = CallbackManager.Factory.create();
         CustomFacebookLoginButton = view.findViewById(R.id.login_button);
-        CustomTwitterLoginButton = view.findViewById(R.id.twt_login_button);
+//        CustomTwitterLoginButton = view.findViewById(R.id.twt_login_button);
         CustomGoogleLoginButton = view.findViewById(R.id.google_button);
 
         mTwitterAuthClient = new TwitterAuthClient();
-        loginWithTwt();
+//        loginWithTwt();
         loginWithFb();
         loginWithGoogle();
         return view;
@@ -95,13 +95,7 @@ public class CustomSocialFragement extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Twitter.initialize(getContext());
         args = new Bundle();
-
-
-    }
-
-    private void loginWithTwt() {
 
         TwitterConfig config = new TwitterConfig.Builder(getActivity())
                 .logger(new DefaultLogger(Log.DEBUG))
@@ -110,6 +104,12 @@ public class CustomSocialFragement extends Fragment {
                 .debug(true)
                 .build();
         Twitter.initialize(config);
+
+    }
+
+    private void loginWithTwt() {
+
+
 
         CustomTwitterLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
