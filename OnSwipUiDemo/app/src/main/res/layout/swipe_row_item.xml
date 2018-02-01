@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swip_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<!--
+    <LinearLayout
+        android:id="@+id/view_right_left"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/t_undo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/colorWhite"
+            android:background="#003c54"
+            android:text="Undo" />
+
+        <TextView
+            android:id="@+id/t_edit"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#0076a5"
+            android:textColor="@color/colorWhite"
+            android:text="Edit" />
+    </LinearLayout>
+-->
+    <LinearLayout
+        android:id="@+id/view_left_right"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:id="@+id/t_dlt"
+            android:background="@color/colorAccent"
+            android:tint="@color/colorWhite"
+            android:src="@drawable/ic_delete_white"/>
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:id="@+id/t_undo"
+            android:background="@color/colorPrimary"
+            android:tint="@color/colorWhite"
+            android:src="@drawable/ic_undo_black_24dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/single_row_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorForeGround"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/std_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp" />
+    </LinearLayout>
+</com.daimajia.swipe.SwipeLayout>
