@@ -3,7 +3,10 @@ package com.example.design.material.broadcastreceiver.service;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.design.material.broadcastreceiver.MainActivity;
@@ -13,18 +16,20 @@ import com.example.design.material.broadcastreceiver.MainActivity;
  */
 
 public class ConnectionReciver extends BroadcastReceiver {
+
+    private final String TAG = "asdf";
+
+
     @Override
     public void onReceive(Context context, Intent intent) {
-        Snackbar snackbar = Snackbar.make(MainActivity.constraintLayout, "Not connected ", Snackbar.LENGTH_INDEFINITE);
+
+
         if (MainActivity.netWorkStatus(context) == 1) {
-                Toast.makeText(context,"Connected",Toast.LENGTH_SHORT).show();
-               snackbar.dismiss();
-        } else
-        {
-            if(!snackbar.isShown()) {
-                Toast.makeText(context,"no service",Toast.LENGTH_SHORT).show();
-                snackbar.show();
-            }
+
+            MySnakeBar.getSnackbar().hideSnakeBar();
+
+        } else if (MainActivity.netWorkStatus(context) == 0) {
+            MySnakeBar.getSnackbar().showSnakeBar();
         }
     }
 }

@@ -44,5 +44,12 @@ public class MainActivity extends AppCompatActivity {
         return CONN_FAILED;
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if(netWorkStatus(MainActivity.this)==1){
+
+        }
+    }
 }
 
