@@ -1,13 +1,11 @@
 package com.example.faizrehman.inovision.ui;
 
-import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
-import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,7 +15,7 @@ import android.widget.TextView;
 import com.example.faizrehman.inovision.R;
 import com.example.faizrehman.inovision.util.Messege;
 
-public class MainActivity extends AppCompatActivity {
+public class UiActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private int layout[];
     private TextView dots[];
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_ui);
         viewPager = (ViewPager) findViewById(R.id.view_pager);
         layout = new int[]{R.layout.slider_view_1, R.layout.slider_view_2, R.layout.slider_view_3};
         btnSkip = (Button) findViewById(R.id.btn_skip);
