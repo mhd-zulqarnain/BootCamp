@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">InovisionHome</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="text_fly">\u25CF "   Fly"</string>
+    <string name="text_power">\u25CF "   Super Power" </string>
+    <string name="forget_pass">Forget Password?</string>
+    <string name="text_login">Login</string>
+    <string name="sign_up_msg">Don’t have an account?</string>
+    <string name="sign_up"> <u>Sign Up</u></string>
+    <string name="u_login"> <u>Login</u></string>
+    <string name="service_txt"> <b>Service</b></string>
+    <string name="calender_txt"> Calender</string>
+    <string-array name="items">
+        <item>Account</item>
+        <item>Payment</item>
+        <item>Calender</item>
+        <item>Settings</item>
+    </string-array>
+    <string name="arrow_back">&lt;</string>
+    <string name="arrow_next">&gt;</string>
+</resources>
