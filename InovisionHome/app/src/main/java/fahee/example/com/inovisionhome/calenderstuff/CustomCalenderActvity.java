@@ -6,6 +6,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -32,7 +33,11 @@ public class CustomCalenderActvity extends AppCompatActivity {
         recyclerView=findViewById(R.id.gridview);
         currentMonth=findViewById(R.id.currentMonth);
         btnBefore=findViewById(R.id.btnBefore);
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         btnNext=findViewById(R.id.btn_next);
+
   setCalendar();
 
     }

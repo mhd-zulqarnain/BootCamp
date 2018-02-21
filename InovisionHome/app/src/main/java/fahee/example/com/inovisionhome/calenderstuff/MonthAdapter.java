@@ -89,7 +89,8 @@ public class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.ViewHolder> 
 
             if (isToday(date[0], date[1], date[2])) {
                 holder.day.setBackground(ResourcesCompat.getDrawable(mContext.getResources(), R.drawable.gradient_calander, null));
-                holder.day.setPadding(3,3,3,3);
+                holder.day.setWidth(90);
+                holder.day.setHeight(90);
                 holder.day.setTextColor(Color.WHITE);
                 holder.day.setOnClickListener(new View.OnClickListener() {
                     @Override

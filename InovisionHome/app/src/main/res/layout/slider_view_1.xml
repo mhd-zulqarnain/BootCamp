@@ -10,6 +10,6 @@
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:id="@+id/slide_img_1"
-        android:src="@drawable/slide1"
+
         />
 </RelativeLayout>
