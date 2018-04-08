@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://E:\PC-Task\OnSwipUiDemo\OnSwipDelete.iml" filepath="E:\PC-Task\OnSwipUiDemo\OnSwipDelete.iml" />
       <module fileurl="file://$PROJECT_DIR$/OnSwipUiDemo.iml" filepath="$PROJECT_DIR$/OnSwipUiDemo.iml" />
+      <module fileurl="file://D:\Work\java\android\PC-Task\OnSwipUiDemo\OnSwipUiDemo.iml" filepath="D:\Work\java\android\PC-Task\OnSwipUiDemo\OnSwipUiDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Work\java\android\PC-Task\OnSwipUiDemo\app\app.iml" filepath="D:\Work\java\android\PC-Task\OnSwipUiDemo\app\app.iml" />
     </modules>
   </component>
 </project>
